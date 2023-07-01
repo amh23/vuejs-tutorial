@@ -1,0 +1,29 @@
+<template>
+    <p>Hello from Vue</p>
+</template>
+<script>
+export default{
+    data(){
+        return{
+            activePage: 0,
+            pages: [
+                {
+                    link: {text: 'Home',url: 'index.html'}, 
+                    pageTitle: 'HomePage',
+                    content: 'This is the home content'
+                },
+                {
+                    link: {text: 'About',url: 'about.html'}, 
+                    pageTitle: 'About Page',
+                    content: 'This is the about content'    
+                },
+                {
+                    link: {text: 'Contact',url: 'contact.html'}, 
+                    pageTitle: 'Contact Page',
+                    content: 'This is the contact content'
+                },
+            ]
+        };
+    }
+}
+</script>
