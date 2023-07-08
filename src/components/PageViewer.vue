@@ -6,15 +6,7 @@
 </template>
 <script>
 export default{
-    props: {
-        type: Object,
-        default(rawProps){
-            return {
-                pageTitle: '',
-                content: ''
-            };
-        }
-    }  
+    props: ['page'],    
 }
 </script>
 <style scoped>
