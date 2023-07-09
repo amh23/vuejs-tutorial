@@ -5,7 +5,7 @@
         :nav-link-click="(index) => activePage = index"
     ></navbar>
     <page-viewer
-       
+        v-if="pages.length > 0"
         :page="pages[activePage]"
     ></page-viewer>
 </template>
@@ -32,7 +32,7 @@ export default{
             let data = await res.json();
 
            this.pages  = data;
-        }
+        }       
     }
 }
 </script>
