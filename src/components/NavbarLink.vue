@@ -1,18 +1,20 @@
 <template>
-    <a 
-        class="nav-link"
-        :class="activeClasses"
-        :href="page.link.url"
-        :title="`This link goes to the ${page.link.text} page`"
-        >
-        {{ page.link.text }}</a>
+    <li>
+        <a 
+            class="nav-link" 
+            :class="activeClasses" 
+            :href="page.link.url"
+            :title="`This link goes to the ${page.link.text} page`"
+            @click.prevent="$bus.$emit('navbarLinkActived', index)"
+            >{{ page.link.text }}</a>
+    </li>
 </template>
 <script>
-export default{
-    props: ['page','isActive'],
+export default {
+    props: ['page', 'index', 'isActive'],
     computed: {
         activeClasses() {
-            return{
+            return {
                 active: this.isActive,
                 emphasize: this.isActive
             };
@@ -21,7 +23,7 @@ export default{
 }
 </script>
 <style scoped>
-.emphasize{
+.emphasize {
     text-decoration: underline !important;
 }
 </style>
