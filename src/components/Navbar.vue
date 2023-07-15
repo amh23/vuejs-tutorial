@@ -7,12 +7,13 @@
                 <navbar-link
                      v-for="(page, index) in publishedPages" 
                      class="nav-item" 
+                     :key="index"
                      :page="page"
                      :index ="index"
                    ></navbar-link>
                 <li>
                     <router-link
-                        to="/create"
+                        to="/pages/create"
                         class="nav-link" 
                         active-class="active"
                         aria-current="page"
@@ -42,8 +43,7 @@ export default {
         publishedPages() {
             return this.pages.filter(p => p.published);
         }
-    },
-    props: ['pages'],
+    }, 
     data() {
         return {
             theme: 'light',
